@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Digital Para Iniciantes</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:white;
+  background:url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80")
+  no-repeat center/cover;
+  min-height:100dvh;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:0;
+  text-align:center;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  z-index:1;
+}
+
+.container{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:100%;
+  min-height:100dvh;
+  padding:28px 20px 50px;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(4px);
+}
+
+/* PARTE DE CIMA */
+.badge{
+  background:#ff2e2e;
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:30px;
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:44px;
+  line-height:1.15;
+  margin:0 0 18px;
+  font-weight:900;
+  text-shadow:2px 2px 8px rgba(0,0,0,.8);
+}
+
+p{
+  font-size:24px;
+  line-height:1.5;
+  opacity:1;
+  margin:0 0 22px;
+  font-weight:600;
+}
+
+.countdown{
+  background:rgba(255,0,0,.3);
+  border:3px solid #ff0000;
+  padding:18px;
+  border-radius:16px;
+  margin:24px 0;
+  font-size:28px;
+  font-weight:900;
+  text-shadow:1px 1px 4px rgba(0,0,0,.8);
+}
+
+.price{
+  font-size:68px;
+  color:#00ff66;
+  margin:12px 0;
+  font-weight:900;
+  text-shadow:0 0 15px rgba(0,255,102,.6);
+}
+
+.guarantee{
+  font-size:20px;
+  line-height:1.7;
+  opacity:1;
+  margin-bottom:28px;
+  font-weight:600;
+}
+
+button{
+  width:100%;
+  padding:24px;
+  font-size:26px;
+  background:#00ff66;
+  color:black;
+  border:none;
+  border-radius:18px;
+  cursor:pointer;
+  font-weight:900;
+  animation:pulse 1.5s infinite;
+  margin-bottom:20px;
+  box-shadow:0 8px 30px rgba(0,255,102,.5);
+}
+
+.payment-seals{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:32px;
+  flex-wrap:wrap;
+}
+
+.payment-seals span{
+  background:rgba(255,255,255,.15);
+  padding:8px 14px;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:700;
+}
+
+/* SEÇÕES */
+.section{
+  background:rgba(255,255,255,.12);
+  border:2px solid rgba(255,255,255,.25);
+  border-radius:24px;
+  padding:28px;
+  margin:26px 0;
+  text-align:left;
+}
+
+.section h3{
+  font-size:34px;
+  margin:0 0 24px;
+  color:#00ff66;
+  text-align:center;
+  font-weight:900;
+  text-shadow:2px 2px 8px rgba(0,0,0,.9);
+}
+
+/* BÔNUS */
+.bonus-box{
+  background:linear-gradient(135deg, rgba(255,215,0,.2), rgba(255,165,0,.2));
+  border:2px solid #ffd700;
+  border-radius:18px;
+  padding:20px;
+  margin:20px 0;
+}
+
+.bonus-box h4{
+  font-size:26px;
+  margin:0 0 12px;
+  color:#ffd700;
+  text-align:center;
+}
+
+/* LISTA */
+.benefits{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.benefits li{
+  font-size:26px;
+  line-height:1.8;
+  margin:22px 0;
+  padding-left:44px;
+  position:relative;
+  font-weight:700;
+}
+
+.benefits li:before{
+  content:"✅";
+  position:absolute;
+  left:0;
+  font-size:28px;
+}
+
+/* DEPOIMENTOS */
+.testimonial{
+  background:rgba(255,255,255,.1);
+  border-left:6px solid #00ff66;
+  padding:22px;
+  margin:20px 0;
+  border-radius:16px;
+  font-size:25px;
+  line-height:1.8;
+  font-style:italic;
+  font-weight:700;
+}
+
+.social-proof{
+  text-align:center;
+  font-size:22px;
+  color:#00ff66;
+  font-weight:900;
+  margin-bottom:20px;
+}
+
+/* FAQ */
+.faq-item{
+  margin:24px 0;
+  border-bottom:2px solid rgba(255,255,255,.18);
+  padding-bottom:18px;
+}
+
+.faq-item strong{
+  font-size:28px;
+  display:block;
+  margin-bottom:12px;
+  color:#fff;
+  font-weight:900;
+}
+
+.faq-item p{
+  font-size:25px;
+  margin-top:0;
+  opacity:1;
+  line-height:1.7;
+  font-weight:600;
+}
+
+/* GARANTIA */
+.guarantee-box{
+  background:rgba(0,255,102,.15);
+  border:3px solid #00ff66;
+  border-radius:20px;
+  padding:24px;
+  text-align:center;
+  margin:26px 0;
+}
+
+.guarantee-box h4{
+  font-size:30px;
+  margin:0 0 12px;
+  color:#00ff66;
+}
+
+.guarantee-box p{
+  font-size:22px;
+  margin:0;
+}
+
+.popup{
+  position:fixed;
+  bottom:15px;
+  left:15px;
+  right:15px;
+  background:#111;
+  border:3px solid #00ff66;
+  padding:18px;
+  border-radius:16px;
+  font-size:19px;
+  z-index:999;
+  display:none;
+  max-width:350px;
+  font-weight:bold;
+}
+
+@keyframes pulse{
+ 0%{transform:scale(1);}
+ 50%{transform:scale(1.04);}
+ 100%{transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+  <div class="badge">🔥 OFERTA LIMITADA</div>
+
+  <h1>Marketing Digital Para Iniciantes</h1>
+
+  <p>Aprenda do zero e comece a criar renda online com estratégias simples.</p>
+
+  <div class="countdown">
+    ⏳ Oferta termina em: <span id="timer">15:00</span>
+  </div>
+
+  <div class="price">258 MZN</div>
+  <div class="guarantee">✅ Acesso imediato | ✅ Suporte no WhatsApp | ✅ Garantia 7 dias</div>
+
+  <button id="btnPagar">
+    🚀 QUERO COMEÇAR AGORA
+  </button>
+
+  <div class="payment-seals">
+    <span>💳 M-Pesa</span>
+    <span>💳 e-Mola</span>
+    <span>🔒 Pagamento Seguro</span>
+  </div>
+
+  <!-- BÔNUS -->
+  <div class="section">
+    <h3>🎁 Bônus Exclusivo 24h</h3>
+    <div class="bonus-box">
+      <h4>Bônus 1: Pack de 50 Legendas Prontas</h4>
+      <p style="font-size:22px; text-align:center; margin:0;">Economiza horas criando posts. Valor real: 500 MZN - Hoje grátis!</p>
+    </div>
+    <div class="bonus-box">
+      <h4>Bônus 2: Lista de 100 Produtos Vendáveis</h4>
+      <p style="font-size:22px; text-align:center; margin:0;">Produtos que já vendem muito em Moçambique. Valor real: 300 MZN - Hoje grátis!</p>
+    </div>
+  </div>
+
+  <!-- O QUE VAI APRENDER -->
+  <div class="section">
+    <h3>O que você vai aprender</h3>
+    <ul class="benefits">
+      <li>Criar sua primeira página de vendas em 1 hora</li>
+      <li>Atrair clientes no WhatsApp e Facebook sem gastar</li>
+      <li>Vender qualquer produto físico ou digital</li>
+      <li>Usar o celular para trabalhar de qualquer lugar</li>
+    </ul>
+  </div>
+
+  <!-- PARA QUEM É -->
+  <div class="section">
+    <h3>Para quem é este curso</h3>
+    <ul class="benefits">
+      <li>✅ Para quem quer começar do zero sem saber nada</li>
+      <li>✅ Para quem quer ganhar dinheiro com o celular</li>
+      <li>✅ Para quem já tentou e não conseguiu vender</li>
+    </ul>
+    <h3 style="margin-top:30px; color:#ff5555;">Para quem NÃO é</h3>
+    <ul class="benefits">
+      <li>❌ Para quem quer ficar rico da noite pro dia</li>
+      <li>❌ Para quem não quer colocar em prática</li>
+    </ul>
+  </div>
+
+  <!-- PROVA SOCIAL -->
+  <div class="section">
+    <h3>O que dizem os alunos</h3>
+    <div class="social-proof">🔥 127 pessoas já compraram esta semana</div>
+    <div class="testimonial">
+      "Em 3 dias já fiz minha primeira venda de 500 MZN. Simples e direto." - João M.
+    </div>
+    <div class="testimonial">
+      "Nunca pensei que conseguiria vender online. O curso abriu minha mente." - Ana C.
+    </div>
+    <div class="testimonial">
+      "Eu não sabia nada de internet e já fiz 1200 MZN na primeira semana!" - Carlos T.
+    </div>
+  </div>
+
+  <!-- GARANTIA -->
+  <div class="guarantee-box">
+    <h4>🛡️ Garantia Incondicional 7 Dias</h4>
+    <p>Se em 7 dias tu achares que o curso não valeu, devolvemos 100% do teu dinheiro. Sem perguntas, sem burocracia.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h3>Perguntas Rápidas</h3>
+    <div class="faq">
+      <div class="faq-item">
+        <strong>Preciso saber informática?</strong>
+        <p>Não. O curso é do zero, só precisa de celular e internet.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Quando recebo o acesso?</strong>
+        <p>Na hora. Após o pagamento o link chega no teu WhatsApp.</p>
+      </div>
+      <div class="faq-item">
+        <strong>E se eu não gostar?</strong>
+        <p>Tens 7 dias de garantia. Pede reembolso e devolvemos 100%.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Funciona sem computador?</strong>
+        <p>Sim! 100% do curso é feito pelo celular.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Tem suporte?</strong>
+        <p>Sim. Tens suporte direto comigo no WhatsApp para tirar dúvidas.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="popup" id="popup"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  
+  // TIMER
+  let time = localStorage.getItem('timer') || 15 * 60;
+  const timerEl = document.getElementById("timer");
+
+  function updateTimer() {
+    let m = Math.floor(time / 60);
+    let s = time % 60;
+    timerEl.textContent = `${m}:${s < 10 ? "0" : ""}${s}`;
+    if (time > 0) {
+      time--;
+      localStorage.setItem('timer', time);
+    } else {
+      time = 15 * 60;
+      localStorage.setItem('timer', time);
+    }
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
+
+  // POPUP
+  const popup = document.getElementById("popup");
+  const names = ["João de Maputo", "Maria de Nampula", "Carlos de Beira", "Ana de Quelimane", "Pedro de Tete"];
+  function showPopup() {
+    const name = names[Math.floor(Math.random() * names.length)];
+    popup.textContent = `🔥 ${name} acabou de comprar este curso`;
+    popup.style.display = "block";
+    setTimeout(() => { popup.style.display = "none"; }, 4000);
+  }
+  setInterval(showPopup, 7000);
+
+  // BOTÃO PAGAR
+  document.getElementById("btnPagar").addEventListener("click", function() {
+    window.location.href = "https://ratixpay.co.mz/checkout.html?produto=NLXBYI6RH";
+  });
+
+});
+</script>
+
+</body>
+</html>
